@@ -226,5 +226,28 @@ describe("Notifaction test", () => {
 	});
 
 
+	it("Remove my subscription", () => {
+		// Arrange
+
+		const project = new Project("Test Project", "Test Project Description");
+		project.productOwner = productOwner;
+		const startDate = new Date("2023-03-05");
+		const endDate = new Date("2023-03-30");
+
+		// Act
+		const releaseSprint = SprintFactory.createSprint(Sprints.RELEASE, 1, startDate, endDate) as ReleaseSprint;
+		releaseSprint.addTeamMember(ts);
+		releaseSprint.addTeamMember(dev);
+		releaseSprint.addTeamMember(sm);
+		project.addSprintToProject(releaseSprint);
+		releaseSprint.rootProject = project;
+		
+		productOwner.addNotificationType(new EmailSubscriber(sm.email, new EmailSender()));
+		productOwner.removeNotificationType(productOwner.notificationTypes[0])
+
+		expect(productOwner.notificationTypes).toHaveLength(0);
+	});
+
+
 });
 
