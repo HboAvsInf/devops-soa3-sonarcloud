@@ -7,7 +7,7 @@ export class ImageReportBehaviour implements IReportBehaviour {
 		let file: string = `${report.header.toString()} \n ${report.teamComposition} \n ${report.burndownChart} \n ${
 			report.effortPoints
 		} \n ${report.footer.toString()}`;
-		fs.writeFile(`resources/image/report-${report.sprintNr}.png`, file, function (err) {
+		fs.writeFile(`resources/png/report-${report.sprintNr}.png`, file, function (err) {
 			if (err) {
 				return console.error(err);
 			}

@@ -66,5 +66,92 @@ describe("Task Tests", () => {
 			expect(task.taskState).toBeInstanceOf(DoingState);
 
 		});
+
+		it("Should give Error(You can't go from Todo to Done)", () => {
+			// Arrange
+			const task = new Task("Write in VS code");
+			// Assert
+			task.developer = developer
+
+			// Act and Assert
+			expect(task.taskState).toBeInstanceOf(TodoState);
+		
+			task.taskState.doing()
+			task.taskState.testing()
+			expect(() => task.taskState.doing()).toThrow(Error("This is not correct way of states"));
+
+		});
+
+		it("Should give Error(You can't go from Todo to Testing)", () => {
+			// Arrange
+			const task = new Task("Write in VS code");
+			// Assert
+			task.developer = developer
+
+			// Act and Assert
+			expect(task.taskState).toBeInstanceOf(TodoState);
+			expect(() => task.taskState.testing()).toThrow(Error("You can't go from Todo to Testing."));
+
+		});
+
+		it("Should give Error(You can't go from Done to Todo)", () => {
+			// Arrange
+			const task = new Task("Write in VS code");
+			// Assert
+			task.developer = developer
+
+			// Act and Assert
+			expect(task.taskState).toBeInstanceOf(TodoState);
+			task.taskState.doing()
+			task.taskState.testing()
+			task.taskState.done()
+			expect(() => task.taskState.todo()).toThrow(Error("This Task is already tested and done"));
+
+		});
+
+		it("Should give Error(You can't go from Done to Todo)", () => {
+			// Arrange
+			const task = new Task("Write in VS code");
+			// Assert
+			task.developer = developer
+
+			// Act and Assert
+			expect(task.taskState).toBeInstanceOf(TodoState);
+			task.taskState.doing()
+			task.taskState.testing()
+			task.taskState.done()
+			expect(() => task.taskState.todo()).toThrow(Error("This Task is already tested and done"));
+
+		});
+
+		it("Should give Error(You can't go from Done to Testing)", () => {
+			// Arrange
+			const task = new Task("Write in VS code");
+			// Assert
+			task.developer = developer
+
+			// Act and Assert
+			expect(task.taskState).toBeInstanceOf(TodoState);
+			task.taskState.doing()
+			task.taskState.testing()
+			task.taskState.done()
+			expect(() => task.taskState.testing()).toThrow(Error("This Task is already tested and done"));
+
+		});
+
+		it("Should give Error(You can't go from Done to Testing)", () => {
+			// Arrange
+			const task = new Task("Write in VS code");
+			// Assert
+			task.developer = developer
+
+			// Act and Assert
+			expect(task.taskState).toBeInstanceOf(TodoState);
+			task.taskState.doing()
+			task.taskState.testing()
+			task.taskState.done()
+			expect(() => task.taskState.doing()).toThrow(Error("This Task is already tested and done"));
+
+		});
 	});
 });
