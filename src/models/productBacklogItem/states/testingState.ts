@@ -1,9 +1,8 @@
-import { Tester } from "../../users/tester";
 import { User } from "../../users/user";
 import { ProductBacklogItem } from "../productBacklogItem";
 import { IProductBacklogItemState } from "./IProductBacklogItemState";
 import { TestedState } from "./testedState";
-import { TodoState } from "./todoState";
+
 
 export class TestingState implements IProductBacklogItemState {
 	private productBacklogItem: ProductBacklogItem;

@@ -1,5 +1,4 @@
 import { User } from "../../users/user";
-import { ProductBacklogItem } from "../productBacklogItem";
 
 export interface IProductBacklogItemState {
     todo(user: User): void;

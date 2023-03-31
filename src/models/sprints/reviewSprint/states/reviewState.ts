@@ -1,5 +1,4 @@
 
-import { DevelopmentPipeline, PipelineStatus } from "../../../devOps/developmentPipeline";
 import { ScrumMaster } from "../../../users/scrumMaster";
 import { User } from "../../../users/user";
 import { ReviewSprint } from "../reviewSprint";

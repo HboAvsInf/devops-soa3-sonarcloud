@@ -1,4 +1,3 @@
-import { PipelineStatus } from "../../../devOps/developmentPipeline";
 import { User } from "../../../users/user";
 import { ReleaseSprint } from "../releaseSprint";
 import { IReleaseSprintState } from "./IReleaseSprintState";

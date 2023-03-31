@@ -1,6 +1,3 @@
-import { ProductBacklogItem } from "../../productBacklogItem/productBacklogItem";
-import { IProductBacklogItemState } from "../../productBacklogItem/states/IProductBacklogItemState";
-import { User } from "../../users/user";
 import { Task } from "../task";
 import { ITaskState } from "./ITaskState";
 

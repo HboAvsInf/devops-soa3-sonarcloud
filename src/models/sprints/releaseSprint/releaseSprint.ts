@@ -1,7 +1,6 @@
 import { Sprint } from "../sprint";
 import { CreatedState } from "./states/createdState";
 import { FinishedState } from "./states/finishedState";
-import { InProgressState } from "./states/inProgressState";
 import { IReleaseSprintState } from "./states/IReleaseSprintState";
 
 export class ReleaseSprint extends Sprint {

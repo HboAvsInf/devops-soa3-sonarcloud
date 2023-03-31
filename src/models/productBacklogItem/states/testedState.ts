@@ -1,5 +1,4 @@
 import { Developer } from "../../users/developer";
-import { ScrumMaster } from "../../users/scrumMaster";
 import { Tester } from "../../users/tester";
 import { User } from "../../users/user";
 import { ProductBacklogItem } from "../productBacklogItem";

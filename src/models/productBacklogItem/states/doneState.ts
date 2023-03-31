@@ -1,5 +1,3 @@
-import { Developer } from "../../users/developer";
-import { Tester } from "../../users/tester";
 import { User } from "../../users/user";
 import { ProductBacklogItem } from "../productBacklogItem";
 import { IProductBacklogItemState } from "./IProductBacklogItemState";
