@@ -109,7 +109,7 @@ export abstract class Sprint {
 		return this._sprintReport;
 	}
 
-	public set report(report: SprintReport) {
+	public set sprintReport(report: SprintReport) {
 		this._sprintReport = report;
 	}
 
@@ -123,7 +123,7 @@ export abstract class Sprint {
 
 
 	//Sprint report generate
-	public generateSprintReportPDF(): void {
+	public generateSprintReportPDF(): SprintReport {
 		const sprintReport = new SprintReport(this._sprintNumber, new PdfReportBehaviour());
 
 		sprintReport.setHeader("company_logo.png", "Acme Corporation", "Project X", 1, new Date());
@@ -131,10 +131,12 @@ export abstract class Sprint {
 		sprintReport.setTeamComposition("John Smith (Product Owner), Jane Doe (Scrum Master), Bob Johnson (Developer)");
 		sprintReport.setEffortPoints("50");
 
-		this.report = sprintReport;
+		this._sprintReport = sprintReport;
+
+		return this._sprintReport;
 	}
 
-	public generateSprintReportPNG(): void {
+	public generateSprintReportPNG(): SprintReport {
 		const sprintReport = new SprintReport(this._sprintNumber, new ImageReportBehaviour());
 
 		sprintReport.setHeader("company_logo.png", "Acme Corporation", "Project X", 1, new Date());
@@ -142,6 +144,8 @@ export abstract class Sprint {
 		sprintReport.setTeamComposition("John Smith (Product Owner), Jane Doe (Scrum Master), Bob Johnson (Developer)");
 		sprintReport.setEffortPoints("50");
 
-		this.report = sprintReport;
+		this._sprintReport = sprintReport;
+
+		return sprintReport;
 	}
 }

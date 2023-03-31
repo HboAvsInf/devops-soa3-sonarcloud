@@ -37,4 +37,16 @@ describe("Report tests", () =>{
 
         expect(reviewSprint.sprintReport).toBeInstanceOf(SprintReport);
     });
+
+    it("Generate a report from a sprint - png", () => {
+       
+        const reviewSprint = SprintFactory.createSprint(Sprints.RELEASE, 1, new Date(), new Date(2024,1,1)) as ReviewSprint
+
+       reviewSprint.generateSprintReportPNG();
+
+    
+        expect(reviewSprint.sprintReport.sprintNr).toEqual(1);
+        expect(reviewSprint.sprintReport.effortPoints).toEqual("50");
+        expect(reviewSprint.sprintReport.teamComposition).toEqual("John Smith (Product Owner), Jane Doe (Scrum Master), Bob Johnson (Developer)");
+    });
 });
