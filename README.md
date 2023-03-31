@@ -9,4 +9,4 @@ Avans leerjaar 3 project voor het vak Software & Architectuur 3
 ## Authors
 
 - [Joey de Jonge](https://github.com/JoeydeJongeAvans)
-- [Danine Gijben](https://github.com/dan00n1)
+- [Danoon](https://github.com/dan00n1)
