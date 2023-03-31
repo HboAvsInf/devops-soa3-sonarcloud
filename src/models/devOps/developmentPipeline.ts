@@ -4,12 +4,12 @@ import { CompositeComponent } from "./compositeComponent";
 import { Visitor } from "./vistors/vistor";
 
 export class DevelopmentPipeline {
-	private _pipelineName: String;
+	private _pipelineName: string;
 	private _jobs: Array<CompositeComponent>;
 	private _pipelineStatus: PipelineStatus = PipelineStatus.NotStarted;
 	private _sprint?: Sprint;
 	
-	constructor(pipelineName: String) {
+	constructor(pipelineName: string) {
 		this.pipelineName = pipelineName;
 		this.jobs = new Array<CompositeComponent>();
 	}
@@ -35,10 +35,10 @@ export class DevelopmentPipeline {
 		}
 	}
 
-	public get pipelineName(): String {
+	public get pipelineName(): string {
 		return this._pipelineName;
 	}
-	public set pipelineName(value: String) {
+	public set pipelineName(value: string) {
 		this._pipelineName = value;
 	}
 

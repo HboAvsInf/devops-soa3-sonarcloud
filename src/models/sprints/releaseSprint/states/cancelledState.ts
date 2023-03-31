@@ -2,6 +2,7 @@ import { PipelineStatus } from "../../../devOps/developmentPipeline";
 import { User } from "../../../users/user";
 import { ReleaseSprint } from "../releaseSprint";
 import { IReleaseSprintState } from "./IReleaseSprintState";
+import { FinishedState } from "./finishedState";
 
 export class CancelledState implements IReleaseSprintState {
 	sprint: ReleaseSprint;
@@ -17,15 +18,10 @@ export class CancelledState implements IReleaseSprintState {
 		throw new Error("Method not implemented.");
 	}
 	finished(): void {
-		throw new Error("Method not implemented.");
+		this.sprint.state = new FinishedState(this.sprint)
 	}
 	release(restartPipeline: boolean): void {
-		if (
-			this.sprint.developmentPipeline != null &&
-			this.sprint.developmentPipeline.pipelineStatus == PipelineStatus.Succeeded
-		) {
-			this.sprint.state = new CancelledState(this.sprint);
-		}
+		throw new Error("Method not implemented.");
 	}
 	completed(): void {
 		throw new Error("Method not implemented.");

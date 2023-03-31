@@ -3,8 +3,10 @@ import { DevelopmentPipeline } from "../../../src/models/devOps/developmentPipel
 import { Folder } from "../../../src/models/devOps/map";
 import { ReleaseSprint } from "../../../src/models/sprints/releaseSprint/releaseSprint";
 import { CompletedState } from "../../../src/models/sprints/releaseSprint/states/completedState";
+import { CancelledState } from "../../../src/models/sprints/releaseSprint/states/cancelledState";
 import { FinishedState } from "../../../src/models/sprints/releaseSprint/states/finishedState";
 import { InProgressState } from "../../../src/models/sprints/releaseSprint/states/inProgressState";
+import { ReleaseState } from "../../../src/models/sprints/releaseSprint/states/releaseState";
 import { SprintFactory, Sprints } from "../../../src/models/sprints/sprintFactory";
 import { Developer } from "../../../src/models/users/developer";
 import { ProductOwner } from "../../../src/models/users/productOwner";
@@ -126,6 +128,46 @@ describe("Release Sprint test", () => {
 			// Assert
 			expect(releaseSprint.state instanceof CompletedState).toBe(true);
 		});
+
+		it("ReleaseSprint state to FinishState", () => {
+			// Arrange
+			const startDate = new Date("2023-03-05");
+			const endDate = new Date("2023-03-30");
+
+			// Act
+			const releaseSprint = SprintFactory.createSprint(Sprints.RELEASE, 1, startDate, endDate) as ReleaseSprint;
+			const devPipeline = new DevelopmentPipeline(DUMMY_STRING);
+
+           ;
+            releaseSprint.setPipeline(devPipeline);
+			releaseSprint.state.inProgress(sm);
+			releaseSprint.state.finished();
+			releaseSprint.state.release(false)
+		
+			// Assert
+			expect(releaseSprint.state instanceof CancelledState).toBe(true);
+		});
+
+		it("ReleaseSprint state to FinishState", () => {
+			// Arrange
+			const startDate = new Date("2023-03-05");
+			const endDate = new Date("2023-03-30");
+
+			// Act
+			const releaseSprint = SprintFactory.createSprint(Sprints.RELEASE, 1, startDate, endDate) as ReleaseSprint;
+			const devPipeline = new DevelopmentPipeline(DUMMY_STRING);
+
+           ;
+            releaseSprint.setPipeline(devPipeline);
+			releaseSprint.state.inProgress(sm);
+			releaseSprint.state.finished();
+			releaseSprint.state.release(false)
+			releaseSprint.state.finished();
+		
+			// Assert
+			expect(releaseSprint.state instanceof FinishedState).toBe(true);
+		});
+		
 
 		
 	});

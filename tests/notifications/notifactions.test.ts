@@ -2,6 +2,7 @@ import { Commando } from "../../src/models/devOps/commando";
 import { DevelopmentPipeline, PipelineStatus } from "../../src/models/devOps/developmentPipeline";
 import { Folder } from "../../src/models/devOps/map";
 import { EmailSender } from "../../src/models/notifications/API/emailSender";
+import { SlackSender } from "../../src/models/notifications/API/slackSender";
 import { SMSSender } from "../../src/models/notifications/API/smsSender";
 import { EmailSubscriber } from "../../src/models/notifications/emailSubscriber";
 import { SlackSubscriber } from "../../src/models/notifications/slackSubscriber";
@@ -57,7 +58,7 @@ describe("Notifaction test", () => {
 			reviewSprint.addTeamMember(sm);
 			reviewSprint.addUserStoryToSprint(userStory);
 			userStory.sprintBacklog = reviewSprint;
-			dev.addNotificationType(new SmsSubscriber(dev.phoneNumber, new SMSSender()));
+			dev.addNotificationType(new SlackSubscriber(dev.email, new SlackSender()));
 			ts.addNotificationType(new SmsSubscriber(ts.phoneNumber, new SMSSender()));
 			userStory.productBacklogItemState.doing();
 			userStory.productBacklogItemState.readyForTesting(dev);
