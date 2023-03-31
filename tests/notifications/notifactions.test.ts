@@ -195,7 +195,7 @@ describe("Notifaction test", () => {
 		releaseSprint.rootProject = project;
 		
 		sm.addNotificationType(new EmailSubscriber(sm.email, new EmailSender()));
-		productOwner.addNotificationType(new EmailSubscriber(sm.email, new EmailSender()));
+		productOwner.addNotificationType(new SlackSubscriber(sm.email, new SlackSender()));
 		const devPipeline = new DevelopmentPipeline(DUMMY_STRING);
 
 		var git = new Folder("git");
