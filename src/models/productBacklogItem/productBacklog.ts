@@ -11,7 +11,7 @@ export class ProductBacklog {
         this.productBacklogItems.push(item);
     }
 
-    //Sorts on alphabetical order
+    //Sorts on story points from big to small :)
     public getProductBacklogItems(): ProductBacklogItem[] {
 		return this.productBacklogItems.sort((a, b) => b.storyPoints - a.storyPoints);
 	}
