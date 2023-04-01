@@ -3,6 +3,7 @@ import { ScrumMaster } from "../../../users/scrumMaster";
 import { User } from "../../../users/user";
 import { ReviewSprint } from "../reviewSprint";
 import { CompletedState } from "./completedState";
+import { CreatedState } from "./createdState";
 import { IReviewSprintState } from "./IReviewSprintState";
 
 
@@ -14,7 +15,7 @@ export class ReviewState implements IReviewSprintState {
     }
 
     created(): void {
-        throw new Error("Method not implemented.");
+        this.sprint.state = new CreatedState(this.sprint);
     }
     inProgress(user: User): void {
         throw new Error("Method not implemented.");
