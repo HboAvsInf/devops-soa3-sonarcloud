@@ -12,5 +12,6 @@ export class PdfReportBehaviour implements IReportBehaviour {
 				return console.error(err);
 			}
 		});
+		console.log("PDF report generated")
 	}
 }
