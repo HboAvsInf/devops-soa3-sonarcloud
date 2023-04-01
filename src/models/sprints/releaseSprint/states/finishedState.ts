@@ -5,7 +5,7 @@ import { ReleaseSprint } from "../releaseSprint";
 import { CancelledState } from "./cancelledState";
 import { CompletedState } from "./completedState";
 import { IReleaseSprintState } from "./IReleaseSprintState";
-import { ReleaseState } from "./releaseState";
+
 
 export class FinishedState implements IReleaseSprintState {
 	sprint: ReleaseSprint;
