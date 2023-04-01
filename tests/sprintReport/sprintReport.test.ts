@@ -34,7 +34,8 @@ describe("Report tests", () =>{
 
         reviewSprint.generateSprintReportPNG();
 
-
+        expect(reviewSprint.sprintReport.sprintNr).toEqual(1);
+        expect(reviewSprint.sprintReport.effortPoints).toEqual("50")
         expect(reviewSprint.sprintReport).toBeInstanceOf(SprintReport);
     });
 

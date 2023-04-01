@@ -26,6 +26,10 @@ export class SprintReport {
         this.effortPoints = effortPoints;
     }
 
+    setBurnndownChart(burndownChart : string){
+        this.burndownChart = burndownChart;
+    }
+
     generateReport(){
         this.reportGenerator.generateReport(this);
     }

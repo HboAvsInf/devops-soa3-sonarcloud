@@ -130,10 +130,11 @@ export abstract class Sprint {
 		sprintReport.setFooter("company_logo.png", "Acme Corporation", "Project X", 1, new Date());
 		sprintReport.setTeamComposition("John Smith (Product Owner), Jane Doe (Scrum Master), Bob Johnson (Developer)");
 		sprintReport.setEffortPoints("50");
+		sprintReport.setBurnndownChart("burnndown_chart.png");
 
-		this._sprintReport = sprintReport;
+		sprintReport.generateReport() // Generate report
 
-		return this._sprintReport;
+		return this._sprintReport = sprintReport;
 	}
 
 	public generateSprintReportPNG(): SprintReport {
@@ -143,9 +144,10 @@ export abstract class Sprint {
 		sprintReport.setFooter("company_logo.png", "Acme Corporation", "Project X", 1, new Date());
 		sprintReport.setTeamComposition("John Smith (Product Owner), Jane Doe (Scrum Master), Bob Johnson (Developer)");
 		sprintReport.setEffortPoints("50");
+		sprintReport.setBurnndownChart("burnndown_chart.png");
 
-		this._sprintReport = sprintReport;
+		sprintReport.generateReport() //Generate report
 
-		return sprintReport;
+		return this._sprintReport = sprintReport;
 	}
 }
