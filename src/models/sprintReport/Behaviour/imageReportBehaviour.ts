@@ -11,9 +11,8 @@ export class ImageReportBehaviour implements IReportBehaviour {
 			if (err) {
 				return console.error(err);
 			}
-			console.log("Sprint report has been created! - PNG");
 		});
 	}
 }
 
-export { SprintReport };
+

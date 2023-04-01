@@ -11,7 +11,6 @@ export class PdfReportBehaviour implements IReportBehaviour {
 			if (err) {
 				return console.error(err);
 			}
-			console.log("Sprint report has been created! - pdf");
 		});
 	}
 }

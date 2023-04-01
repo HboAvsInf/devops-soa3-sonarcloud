@@ -2,8 +2,9 @@ import { DevelopmentPipeline } from "../devOps/developmentPipeline";
 import { DevOpsRunner } from "../devOps/vistors/devOpsRunner";
 import { ProductBacklogItem } from "../productBacklogItem/productBacklogItem";
 import { Project } from "../project";
-import { ImageReportBehaviour, SprintReport } from "../sprintReport/Behaviour/imageReportBehaviour";
+import { ImageReportBehaviour } from "../sprintReport/Behaviour/imageReportBehaviour";
 import { PdfReportBehaviour } from "../sprintReport/Behaviour/pdfReportBehaviour";
+import { SprintReport } from "../sprintReport/sprintReport";
 import { User } from "../users/user";
 
 export abstract class Sprint {
