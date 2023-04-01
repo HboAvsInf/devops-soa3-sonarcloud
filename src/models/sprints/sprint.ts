@@ -121,7 +121,6 @@ export abstract class Sprint {
 		this._developmentPipeline = developmentPipeline;
 	}
 
-
 	//Sprint report generate
 	public generateSprintReportPDF(): SprintReport {
 		const sprintReport = new SprintReport(this._sprintNumber, new PdfReportBehaviour());
@@ -132,9 +131,10 @@ export abstract class Sprint {
 		sprintReport.setEffortPoints("50");
 		sprintReport.setBurnndownChart("burnndown_chart.png");
 
-		sprintReport.generateReport() // Generate report
+		sprintReport.generateReport(); // Generate report
 
-		return this._sprintReport = sprintReport;
+		this._sprintReport = sprintReport;
+		return sprintReport;
 	}
 
 	public generateSprintReportPNG(): SprintReport {
@@ -146,8 +146,9 @@ export abstract class Sprint {
 		sprintReport.setEffortPoints("50");
 		sprintReport.setBurnndownChart("burnndown_chart.png");
 
-		sprintReport.generateReport() //Generate report
+		sprintReport.generateReport(); //Generate report
 
-		return this._sprintReport = sprintReport;
+		this._sprintReport = sprintReport;
+		return sprintReport;
 	}
 }
