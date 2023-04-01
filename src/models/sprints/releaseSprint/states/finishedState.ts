@@ -26,7 +26,6 @@ export class FinishedState implements IReleaseSprintState {
 
 	release(restartPipeline: boolean): void {
 		let restarts = 0
-		this.sprint.state = (new ReleaseState(this.sprint));
 		this.sprint.startPipeline();
 
 		if (this.sprint.developmentPipeline != null && this.sprint.developmentPipeline.pipelineStatus == PipelineStatus.Succeeded) {
