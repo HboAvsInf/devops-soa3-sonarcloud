@@ -6,7 +6,6 @@ import { CompletedState } from "../../../src/models/sprints/releaseSprint/states
 import { CancelledState } from "../../../src/models/sprints/releaseSprint/states/cancelledState";
 import { FinishedState } from "../../../src/models/sprints/releaseSprint/states/finishedState";
 import { InProgressState } from "../../../src/models/sprints/releaseSprint/states/inProgressState";
-import { ReleaseState } from "../../../src/models/sprints/releaseSprint/states/releaseState";
 import { SprintFactory, Sprints } from "../../../src/models/sprints/sprintFactory";
 import { Developer } from "../../../src/models/users/developer";
 import { ProductOwner } from "../../../src/models/users/productOwner";
